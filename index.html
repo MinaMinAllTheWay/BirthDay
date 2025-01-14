@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="birthdayCard">
+    <div class="cardFront">
+      <h3 class="happy">HAPPY BIRTHDAY</h3>
+      <div class="balloons">
+        <div class="balloon-1"></div>
+        <div class="balloon-2"></div>
+        <div class="balloon-3"></div>
+        <div class="balloon-4"></div>
+      </div>
+    </div>
+    <div class="cardInside">
+      <h5 class="back">HAPPY BIRTHDAY</h5>
+      <div class="message-container">
+        <!-- Page 1 -->
+        <div class="message-page" id="page-1">
+          <p>To my dearest, Geyb,<br><br><small>
+            Good morning? Good night? bahala na, basta HAPPY BIRTHDAY BEBE!!! 🎉 enjoy your day!! I don’t have a gift for you rn, sabi mo kasi di ka mahilig sa bracelet :< bawi nalang ako next time (⁠^⁠^⁠) Also, you know naman na I’m always by your side so you can count on me whenever you’re having a hard time...
+          </small></p>
+        </div>
+        <!-- Page 2 -->
+        <div class="message-page" id="page-2" style="display: none;">
+          <p><small>Though, there are times that I can’t give you the proper comfort you need since I’m super duper bad talaga when it comes to comforting someone...pero, I’m always here naman to listen!!! Andddd I know that sometimes medyo out of hand na yung pag-tease/joke ko sa’yo huhuhuhuhu I’m sorry na bebe, but I don’t mean all of it naman 🤗🤗 Tiyaka minsan we have a lot of misunderstandings and tampuhan...</small></p>
+        </div>
+        <!-- Page 3 -->
+        <div class="message-page" id="page-3" style="display: none;">
+          <p><small>...pero hahahaha sana ma-tolerate mo pa rin akooooo (promise magbabago na ako) 😭😭 Lastly, please wait for me...Yun lang HEHEHEHEHEHEHHEHEB I love you lots and lots!!!</small></p>
+        </div>
+      </div>
+      <!-- Pagination buttons -->
+      <div class="pagination">
+        <button id="prevBtn" onclick="changePage(-1)">&#60;</button>
+        <span id="pageNumber">Page 1</span>
+        <button id="nextBtn" onclick="changePage(1)">&#62;</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 3;
+
+    // Show the first page by default
+    document.getElementById(`page-${currentPage}`).style.display = "block";
+
+    function changePage(direction) {
+      const newPage = currentPage + direction;
+      if (newPage < 1 || newPage > totalPages) return;
+
+      // Hide the current page
+      document.getElementById(`page-${currentPage}`).style.display = "none";
+
+      // Update the current page number
+      currentPage = newPage;
+
+      // Show the new page
+      document.getElementById(`page-${currentPage}`).style.display = "block";
+      document.getElementById("pageNumber").textContent = `Page ${currentPage}`;
+    }
+  </script>
+</body>
+
+    </html>
+              
